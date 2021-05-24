@@ -39,9 +39,9 @@ app.use("/matchWinners", matchWinners);
 app.use("/frequentPlayers", frequentPlayers);
 app.use("/defeatedby", defeatedby);
 app.use("/score", score);
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../build/index.html"));
+// });
 
 //Startar servern
 app.listen(PORT, () => {
