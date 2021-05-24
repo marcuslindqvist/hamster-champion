@@ -17,7 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-admin-key.json
+/backend/private-key.json
 
 
 npm-debug.log*
