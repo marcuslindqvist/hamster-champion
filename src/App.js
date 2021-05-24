@@ -1,10 +1,12 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import PageContainer from "./components/PageContainer";
 
 function App() {
-  return <div className="App">HELLO
-  
-  </div>;
+  return (
+    <div className="App">
+      <PageContainer />
+    </div>
+  );
 }
 
 export default App;

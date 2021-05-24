@@ -1,3 +1,20 @@
 .App {
   text-align: center;
+  background-color: #FCFAF4;
+  min-height: 100vh;
+}
+
+.page-container nav{
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.gallery-grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 120px);
+  grid-row-gap: .5em;
+  grid-column-gap: 1em;
 }

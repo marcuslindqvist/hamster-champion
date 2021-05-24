@@ -1,4 +1,0 @@
-
-const StartPage = () => (
-    <div></div>
-)
