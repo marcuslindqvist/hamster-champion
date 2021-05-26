@@ -24,7 +24,7 @@ const GalleryItem = ({ hamster }) => {
             {selectedItem ? <div >
                 <strong>{hamster.name}</strong>
             </div> : <img
-                src={`/img/${hamster.imgName}`}
+                    src={`http://localhost:2010/img/${hamster.imgName}`}
                 alt="hamster"
                 height="100px" />}
             <div >{selectedItem
