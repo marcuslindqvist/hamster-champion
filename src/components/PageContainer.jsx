@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import LandingPage from "./LandingPage"
 import Battle from "./Battle/Battle"
 import Gallery from "./Gallery/Gallery"
+import Statistics from "./Statistics/Statistics"
 
 const PageContainer = ({ hamsterList }) => {
 
@@ -16,17 +17,17 @@ const PageContainer = ({ hamsterList }) => {
             <Router >
                 <nav>
                     <div id="home-link">
-                        <Link style={linkStyle} id="link-home" to="/"><span className="dot"></span>Hamster Champion</Link>
+                        <NavLink style={linkStyle} id="link-home" to="/" activeClassName="active-nav-class"><strong>HAMSTER CHAMPION</strong></NavLink>
                     </div>
 
                     <div className="nav-links">
-                        <Link style={linkStyle} to="/battle"><span className="dot"></span>Battle</Link>
+                        <NavLink style={linkStyle} to="/battle" activeClassName="active-nav-class"><span className="dot"></span>Battle</NavLink>
 
-                        <Link style={linkStyle} to="/gallery"><span className="dot"></span>Gallery</Link>
+                        <NavLink style={linkStyle} to="/gallery" activeClassName="active-nav-class"><span className="dot"></span>Gallery</NavLink>
 
-                        <Link style={linkStyle} to="/statistics"><span className="dot"></span>Statistics</Link>
+                        <NavLink style={linkStyle} to="/statistics" activeClassName="active-nav-class"><span className="dot"></span>Statistics</NavLink>
 
-                        <Link style={linkStyle} to="/history"><span className="dot"></span>History</Link>
+                        <NavLink style={linkStyle} to="/history" activeClassName="active-nav-class"><span className="dot"></span>History</NavLink>
 
                     </div>
 
@@ -40,6 +41,12 @@ const PageContainer = ({ hamsterList }) => {
 
                         <Route path="/gallery">
                             <Gallery hamsterList={hamsterList} />
+                        </Route>
+                        <Route path="/statistics">
+                            <Statistics />
+                        </Route>
+                        <Route path="/history">
+
                         </Route>
 
                         <Route path="/">
