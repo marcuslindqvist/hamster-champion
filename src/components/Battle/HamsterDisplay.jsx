@@ -1,22 +1,14 @@
-
 import "./Battle.css"
-
+import axios from 'axios'
 const HamsterDisplay = ({ hamster }) => {
 
     async function updateHamster(id) {
         console.log("put url", `/hamsters/${id}`);
 
-        const request = {
-            method: 'PUT',
-            body: { wins: 1, games: 1}
-        }
         const URL = `/hamsters/${id}`
-        const response = await fetch(URL, request)
 
-        if(response.status !== 200){
-        console.log("FEL PÅ REQUEST")
-        } else{ console.log(response);}
-    
+        await axios.put(URL, { wins: 1, games: 1})
+        .then(response => console.log(response));
     }
 
     let content
@@ -32,7 +24,7 @@ const HamsterDisplay = ({ hamster }) => {
             </ul>
         </div>;
     } else {
-        content = <div> Is Loading...</div>;
+        content = <div className="hamster-display" > Is Loading...</div>;
     }
     return (
         <div>{content}</div>

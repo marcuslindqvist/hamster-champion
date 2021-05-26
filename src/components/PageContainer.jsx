@@ -18,7 +18,7 @@ const PageContainer = ({ hamsterList }) => {
                     <div id="home-link">
                         <Link style={linkStyle} id="link-home" to="/"><span className="dot"></span>Hamster Champion</Link>
                     </div>
-                    
+
                     <div className="nav-links">
                         <Link style={linkStyle} to="/battle"><span className="dot"></span>Battle</Link>
 
@@ -31,22 +31,23 @@ const PageContainer = ({ hamsterList }) => {
                     </div>
 
                 </nav>
+                <div className="content-container">
+                    <Switch>
 
-                <Switch>
+                        <Route path="/battle">
+                            <Battle hamsterList={hamsterList} />
+                        </Route>
 
-                    <Route path="/battle">
-                        <Battle hamsterList={hamsterList} />
-                    </Route>
+                        <Route path="/gallery">
+                            <Gallery hamsterList={hamsterList} />
+                        </Route>
 
-                    <Route path="/gallery">
-                        <Gallery hamsterList={hamsterList} />
-                    </Route>
+                        <Route path="/">
+                            <LandingPage />
+                        </Route>
 
-                    <Route path="/">
-                        <LandingPage />
-                    </Route>
-
-                </Switch>
+                    </Switch>
+                </div>
             </Router>
 
         </div>

@@ -128,7 +128,7 @@ router.put("/:id", async (req, res) => {
 			res.sendStatus(400);
 			return;
 		}
-
+console.log("rad 131");
 		await db.collection("hamsters").doc(id).set(updatedHamster, {
 			merge: true,
 		});

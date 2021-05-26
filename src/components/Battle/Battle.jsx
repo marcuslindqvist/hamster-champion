@@ -26,11 +26,10 @@ const Battle = ({ hamsterList }) => {
 
     return (
         <div className="battle-component">
-            <h1>Vem vinner?</h1>
-
             <main>
 
                 <HamsterDisplay hamster={warriorOne} />
+                
                 <HamsterDisplay hamster={warriorTwo} />
 
             </main>

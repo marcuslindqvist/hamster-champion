@@ -20,9 +20,9 @@ const GalleryItem = ({ hamster }) => {
     )
     
     return (
-        <div onMouseEnter={changeSelect} onMouseLeave={changeSelect}>
+        <div onMouseEnter={changeSelect} onMouseLeave={changeSelect} className="gallery-item">
             {selectedItem ? <div >
-                {hamster.name}
+                <strong>{hamster.name}</strong>
             </div> : <img
                 src={`/img/${hamster.imgName}`}
                 alt="hamster"
