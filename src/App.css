@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #FCFAF4;
+  /* background-color: #FCFAF4; */
+  background-image: linear-gradient(rgb(232, 245, 255), #FCFAF4);
   min-height: 100vh;
 }
 
@@ -9,12 +10,21 @@
   display: flex;
   align-items: center;
   padding: 1rem;
+  background-color: #FCFAF4;
 }
 .gallery-grid{
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(auto-fill, 120px);
-  grid-row-gap: .5em;
+  grid-row-gap: 1em;
   grid-column-gap: 1em;
+}
+
+span.dot {
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid black;
+  margin-right: 0.5em;
 }

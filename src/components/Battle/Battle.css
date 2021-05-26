@@ -1,0 +1,29 @@
+/* Battle Component */
+.battle-component{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1em;
+}
+.battle-component main {
+    display: flex;
+    flex-direction: row;
+    grid-column: 2;
+}
+
+
+/* Hamster Display Component */
+.hamster-display {
+    border: 1px black solid;
+    text-align:  left;
+    max-width: 80%;
+}
+
+.hamster-display li {
+    list-style-type: none;
+}
+
+.hamster-display img {
+    overflow: hidden;
+    width: 100%;
+    object-fit: contain
+}

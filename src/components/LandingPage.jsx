@@ -1,7 +1,10 @@
+
 const LandingPage = () => {
     return (
         <div>
-            Välkommen till hamster champion X !
+            <h1>Find the most adorable hamster</h1>
+            <button>Join the quest</button>
+            <img src="../img/flagster.png" alt="" />
         </div>
     )
 }

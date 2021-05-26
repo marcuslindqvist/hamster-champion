@@ -2,13 +2,37 @@ import { useState } from 'react'
 const GalleryItem = ({ hamster }) => {
     const [selectedItem, setSelectedItem] = useState("")
 
-    return (
+    function changeSelect() {
+        if (selectedItem) {
+            setSelectedItem("")
+        } else setSelectedItem(hamster.id)
+    }
+
+    const showDetails = (
         <div>
-            <img
-                src={`../../img/${hamster.imgName}`}
+            <ul>
+                <li>Ålder: {hamster.age}</li>
+                <li>Favoritmat: {hamster.favFood}</li>
+                <li>Älskar att: {hamster.loves}</li>
+                <li>wins: {hamster.wins} games {hamster.games} defeats {hamster.defeats}</li>
+            </ul>
+        </div>
+    )
+    
+    return (
+        <div onMouseEnter={changeSelect} onMouseLeave={changeSelect}>
+            {selectedItem ? <div >
+                {hamster.name}
+            </div> : <img
+                src={`/img/${hamster.imgName}`}
                 alt="hamster"
-                height="200px" />
+                height="100px" />}
+            <div >{selectedItem
+                ? showDetails 
+                : <span></span>
+            }</div>
         </div>
     )
 }
+
 export default GalleryItem
