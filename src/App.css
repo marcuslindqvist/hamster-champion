@@ -1,49 +1,74 @@
 .App {
-  text-align: center;
-  /* background-color: #FCFAF4; */
-  background-image: linear-gradient(rgb(232, 245, 255), #FCFAF4);
-  min-height: 100vh;
+	text-align: center;
+	/* background-color: #FCFAF4; */
+	background-image: linear-gradient(rgb(232, 245, 255), #FCFAF4);
+	min-height: 100vh;
 }
 
-.page-container nav{
-  border-bottom: 1px solid black;
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  background-color: #FCFAF4;
-  position: fixed;
-  top: 0;
-  width: 100%;
+.page-container nav {
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	background-color: #FCFAF4;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
-.content-container{
-  padding-top: 80px;
+
+.content-container {
+	padding-top: 80px;
 }
-.gallery-grid{
-  max-width: 60%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, 200px);
-  grid-row-gap: 1em;
-  grid-column-gap: 0.2em;
+
+.gallery-grid {
+	max-width: 60%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(auto-fill, 200px);
+	grid-row-gap: 1em;
+	grid-column-gap: 0.2em;
 }
+
 .gallery-item img {
-  object-fit: cover;
-  width: 300px;
-  height: 200px;
-}
-.gallery-grid li {
-  list-style-type: none;
-}
-span.dot {
-  height: 0.6em;
-  width: 0.6em;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid black;
-  margin-right: 0.5em;
-  transition: background-color 400ms;
+	object-fit: cover;
+	width: 300px;
+	height: 200px;
 }
 
-.active-nav-class span.dot{
-  background-color: rgb(255, 133, 255);
+.gallery-grid li {
+	list-style-type: none;
+}
+
+span.dot {
+	height: 0.6em;
+	width: 0.6em;
+	border-radius: 50%;
+	display: inline-block;
+	border: 1px solid black;
+	margin-right: 0.5em;
+	transition: background-color 400ms;
+}
+
+.active-nav-class span.dot {
+	background-color: rgb(255, 133, 255);
+}
+
+.input-modal {
+	width: 30%;
+}
+.input-modal .row{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 36px;
+}
+.input-modal .input-fields {
+	width: 24ch;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.input-modal img {
+	object-fit: cover;
+	height: 160px;
 }
