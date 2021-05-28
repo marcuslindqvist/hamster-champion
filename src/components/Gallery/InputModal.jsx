@@ -61,9 +61,8 @@ const InputModal = ({ closeModal }) => {
 
                 </div>
             </div>
-            <CallToAction
-                buttonText={`Lägg till ${hamsterName}`}
-                onClick={addHamster} />
+            <button
+                onClick={addHamster}>{`Lägg till ${hamsterName}`}</button>
             <button onClick={() => closeModal(false)}>Stäng</button>
         </div>
     )

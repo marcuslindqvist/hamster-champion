@@ -20,16 +20,16 @@ const Battle = ({ hamsterList }) => {
         setWarriorTwo(hamsterList[second])
     }
     useEffect(() => {
-
         getRandomHamsters()
     }, [])
 
     return (
+
         <div className="battle-component">
             <main>
 
                 <HamsterDisplay hamster={warriorOne} />
-                
+
                 <HamsterDisplay hamster={warriorTwo} />
 
             </main>

@@ -1,10 +1,11 @@
 /* Battle Component */
-.battle-component{
+.battle-component {
     display: grid;
     grid-template-rows: 1fr auto 1fr;
     grid-template-columns: 1fr auto 1fr;
     gap: 1em;
 }
+
 .battle-component main {
     display: flex;
     flex-direction: row;
@@ -12,13 +13,11 @@
     grid-column: 2;
 }
 
-
 /* Hamster Display Component */
 .hamster-display {
     border: 1px black solid;
-    text-align:  left;
-    padding-bottom: 40px;
-  background-image: linear-gradient(rgb(243, 217, 255), #ffdd79);
+    text-align: left;
+    background-image: linear-gradient(rgb(243, 217, 255), #ffdd79);
 }
 
 .hamster-display li {

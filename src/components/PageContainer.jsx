@@ -42,11 +42,13 @@ const PageContainer = ({ hamsterList }) => {
                         <Route path="/gallery">
                             <Gallery hamsterList={hamsterList} />
                         </Route>
+                        
                         <Route path="/statistics">
                             <Statistics />
                         </Route>
+                        
                         <Route path="/history">
-
+                            <div>Hej!</div>
                         </Route>
 
                         <Route path="/">
