@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import LandingPage from "./LandingPage"
 import Battle from "./Battle/Battle"
 import Gallery from "./Gallery/Gallery"
 import Statistics from "./Statistics/Statistics"
+import History from "./History/History"
 
 const PageContainer = ({ hamsterList }) => {
 
@@ -48,7 +49,7 @@ const PageContainer = ({ hamsterList }) => {
                         </Route>
                         
                         <Route path="/history">
-                            <div>Hej!</div>
+                            <History />
                         </Route>
 
                         <Route path="/">

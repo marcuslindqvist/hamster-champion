@@ -1,19 +1,19 @@
 import "./Battle.css"
-import axios from 'axios'
-const HamsterDisplay = ({ hamster }) => {
+// import axios from 'axios'
+const HamsterDisplay = ({ hamster, patch, compId }) => {
 
-    async function updateHamster(id) {
-        console.log("put url", `/hamsters/${id}`);
+    // async function updateHamster(id) {
+    //     console.log("put url", `/hamsters/${id}`);
 
-        const URL = `/hamsters/${id}`
+    //     const URL = `/hamsters/${id}`
 
-        await axios.put(URL, { wins: 1, games: 1})
-        .then(response => console.log(response));
-    }
+    //     await axios.put(URL, { wins: 1, games: 1})
+    //     .then(response => console.log(response));
+    // }
 
     let content
     if (hamster) {
-        content = <div className="hamster-display" onClick={() => updateHamster(hamster.id)}>
+        content = <div id={compId} className="hamster-display" onClick={(e) => patch(e)}>
             <h3>{hamster.name}</h3>
             <img src={`http://localhost:2010/img/${hamster.imgName}`} alt="" />
             <ul>

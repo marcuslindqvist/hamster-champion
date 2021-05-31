@@ -8,7 +8,6 @@ const router = express.Router()
 //En array med hamsterobjekt för de 5 som vunnit flest matcher
 router.get('/', async (req, res) => {
 	try {
-		console.log("inne i winners");
 		const matchesRef = db.collection('hamsters')
 		const snapshot = await matchesRef.get()
 

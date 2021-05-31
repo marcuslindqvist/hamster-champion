@@ -132,7 +132,6 @@ span.dot {
 .input-modal .row {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 36px;
 }
 
 .input-modal .input-fields {
