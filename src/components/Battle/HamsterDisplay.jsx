@@ -2,15 +2,6 @@ import "./Battle.css"
 // import axios from 'axios'
 const HamsterDisplay = ({ hamster, patch, compId }) => {
 
-    // async function updateHamster(id) {
-    //     console.log("put url", `/hamsters/${id}`);
-
-    //     const URL = `/hamsters/${id}`
-
-    //     await axios.put(URL, { wins: 1, games: 1})
-    //     .then(response => console.log(response));
-    // }
-
     let content
     if (hamster) {
         content = <div id={compId} className="hamster-display" onClick={(e) => patch(e)}>
@@ -20,7 +11,6 @@ const HamsterDisplay = ({ hamster, patch, compId }) => {
                 <li>Ålder: {hamster.age}</li>
                 <li>Favoritmat: {hamster.favFood}</li>
                 <li>Älskar att: {hamster.loves}</li>
-                <li>wins: {hamster.wins} games {hamster.games} defeats {hamster.defeats}</li>
             </ul>
         </div>;
     } else {

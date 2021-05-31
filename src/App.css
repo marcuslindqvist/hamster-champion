@@ -14,6 +14,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 5;
 }
 
 .content-container {
@@ -94,6 +95,24 @@
 	box-shadow: 5px 5px 5px rgb(228, 217, 228);
 	transform: skew(1deg);
 	
+}
+.gallery-item .extra-details{
+	display: none;
+}
+.extra-details #erase-btn{
+	cursor: pointer;
+	font-weight: 600;
+}
+.gallery-item:hover .extra-details {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	list-style-type: none;
+	background-color: rgba(255, 250, 254, 0.7);
+	color: black;
+	height: 200px;
 }
 .gallery-item img {
 	object-fit: cover;
