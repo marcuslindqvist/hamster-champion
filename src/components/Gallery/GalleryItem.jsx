@@ -12,7 +12,7 @@ const GalleryItem = ({ hamster }) => {
             className="gallery-item">
             <h3>{hamster.name}</h3>
             <img
-                src={`img/${hamster.imgName}`}
+                src={`http://localhost:2010/img/${hamster.imgName}`}
                 alt="hamster"
             />
             <div className="extra-details">
