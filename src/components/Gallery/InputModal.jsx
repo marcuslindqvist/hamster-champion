@@ -1,6 +1,7 @@
 import { useState } from "react"
+import axios from 'axios'
 
-const InputModal = ({ closeModal }) => {
+const InputModal = () => {
     const [hamsterName, setHamstername] = useState("hamster")
     const [imgUrl, setImgUrl] = useState("http://localhost:2010/img/flagster.png")
     const [newHamster, setNewHamster] = useState({
@@ -11,7 +12,16 @@ const InputModal = ({ closeModal }) => {
         imgName: ""
     })
 
-    async function addHamster() {
+    function addHamster() {
+        axios.post("/hamsters", newHamster)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    console.log(error.response);
+                }
+            });
 
     }
 
@@ -20,6 +30,8 @@ const InputModal = ({ closeModal }) => {
             setHamstername(evt.target.value)
         } else (setHamstername("hamster"))
     }
+
+
     const handleChange = e => {
         const { name, value } = e.target;
         setNewHamster({
@@ -27,20 +39,24 @@ const InputModal = ({ closeModal }) => {
             [name]: value
         });
     };
-
+    function handleImg(e) {
+        if (e.target.value) {
+            setImgUrl(e.target.value)
+        } else setImgUrl("http://localhost:2010/img/flagster.png")
+    }
     return (
         <div className="input-modal">
             <div className="row">
                 <div className="input-fields">
-                    <label htmlFor="name">Namn:</label>
+                    <label htmlFor="name">Namn:
                     <input
-                        value={newHamster.name}
-                        type="text"
-                        name="name"
-                        id="name"
-                        onChange={handleChange}
-                        onBlur={(evt) => showName(evt)}
-                    />
+                            value={newHamster.name}
+                            type="text"
+                            name="name"
+                            id="name"
+                            onChange={handleChange}
+                            onBlur={(evt) => showName(evt)}
+                        /></label>
                     <label htmlFor="age">Ålder:
                     <input
                             type="number"
@@ -70,10 +86,10 @@ const InputModal = ({ closeModal }) => {
                     <label htmlFor="image-link">Bild-url:
                     <input
                             type="url"
-                            name="image-link"
-                            id="image-link"
+                            name="imgName"
+                            id="imgName"
                             onChange={handleChange}
-                            onBlur={(e) => setImgUrl(e.target.value)} />
+                            onBlur={(e) => handleImg(e)} />
                     </label>
                 </div>
                 <div className="input-fields">

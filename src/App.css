@@ -27,6 +27,10 @@
 	grid-template-rows: 90% 1fr;
 }
 
+.battle-icon {
+	color: blueviolet;
+}
+
 .landing-page .left-box {
 	grid-column: 1;
 	grid-row: 1;
@@ -84,25 +88,31 @@
 	justify-content: flex-start;
 	padding: 24px;
 }
-.gallery-item{
+
+.gallery-item {
 	border: 0.5px solid black;
 	background-image: linear-gradient(rgb(252, 247, 241), white);
 	text-align: left;
 	overflow: hidden;
 	transition: box-shadow 200ms, transform 200ms;
 }
-.gallery-item:hover{
+
+.gallery-item:hover {
 	box-shadow: 5px 5px 5px rgb(228, 217, 228);
 	transform: skew(1deg);
-	
+
 }
-.gallery-item .extra-details{
+
+.gallery-item .extra-details {
 	display: none;
 }
-.extra-details #erase-btn{
+
+.extra-details #erase-btn {
 	cursor: pointer;
 	font-weight: 600;
+	width: 100%;
 }
+
 .gallery-item:hover .extra-details {
 	display: block;
 	position: absolute;
@@ -114,6 +124,11 @@
 	color: black;
 	height: 200px;
 }
+
+.extra-details span {
+	color: rgb(197, 70, 70);
+}
+
 .gallery-item img {
 	object-fit: cover;
 	width: 300px;
@@ -130,22 +145,19 @@
 	list-style-type: none;
 }
 
-span.dot {
-	height: 0.6em;
-	width: 0.6em;
-	border-radius: 50%;
-	display: inline-block;
-	border: 1px solid black;
+span .icon {
 	margin-right: 0.5em;
-	transition: background-color 400ms;
+	transition: color 400ms;
 }
 
-.active-nav-class span.dot {
-	background-color: rgb(255, 133, 255);
+.active-nav-class span .icon {
+	color: rgb(255, 133, 255);
 }
 
 .input-modal {
-	width: 30%;
+	border: black 1px solid;
+	padding: 2em;
+	background-color: #FCFAF4;
 }
 
 .input-modal .row {
@@ -157,10 +169,33 @@ span.dot {
 	width: 24ch;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	width: 50%;
+}
+
+.input-fields label {
+	margin-bottom: 1em;
+	text-align: left;
 }
 
 .input-modal img {
 	object-fit: cover;
 	height: 160px;
+}
+
+.input-modal button {
+	font-size: 1em;
+	width: 200px;
+	height: 2em;
+	border-radius: 2em;
+	letter-spacing: 0.2em;
+	box-shadow: 5px 5px 0px 0px black;
+	background-image: linear-gradient(.25turn, #ff8c00, #ff00cf, #feff00);
+	transition: width 1.5s,
+		letter-spacing 1.5s;
+	margin-top: 2em;
+}
+
+.input-modal button:hover {
+	width: 260px;
+	letter-spacing: 0.4em;
 }

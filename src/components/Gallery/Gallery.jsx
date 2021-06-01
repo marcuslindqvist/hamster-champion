@@ -6,7 +6,6 @@ const Gallery = ({ hamsterList }) => {
 
     return (
         <div className="gallery">
-
             <div className="gallery-grid">
                 {hamsterList.map((hamster) =>
                     <GalleryItem
@@ -19,8 +18,6 @@ const Gallery = ({ hamsterList }) => {
 
             <div className="right-box">
                 <h1>GALLERI</h1>
-                <p>Här kan du se alla hamstrar!</p>
-                <p>Eller lägga till en ny hamster</p>
                 <InputModal />
 
             </div>

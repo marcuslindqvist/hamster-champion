@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const GalleryItem = ({ hamster }) => {
 
-    function deleteHamster(){
+    function deleteHamster() {
         axios.delete(`/hamsters/${hamster.id}`)
             .then(response => console.log(response));
     }
@@ -16,14 +16,14 @@ const GalleryItem = ({ hamster }) => {
                 alt="hamster"
             />
             <div className="extra-details">
-                
+
                 <ul>
                     <li>Ålder: {hamster.age}</li>
                     <li>Älskar att: {hamster.loves}</li>
                     <li>Favoritmat: {hamster.favFood}</li>
                 </ul>
                 <div id="erase-btn" onClick={() => deleteHamster()}>
-                    <span>Radera {hamster.name}</span>
+                    <span>Radera {hamster.name}<i className="far fa-trash-alt"></i></span>
                 </div>
             </div>
         </div>

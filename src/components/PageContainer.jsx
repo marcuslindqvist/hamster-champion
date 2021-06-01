@@ -22,13 +22,44 @@ const PageContainer = ({ hamsterList }) => {
                     </div>
 
                     <div className="nav-links">
-                        <NavLink style={linkStyle} to="/battle" activeClassName="active-nav-class"><span className="dot"></span>Battle</NavLink>
+                        <NavLink
+                            style={linkStyle}
+                            to="/battle" activeClassName="active-nav-class">
+                            <span>
+                                <i className="fas fa-bahai icon"></i>
+                            </span>
+                            Battle
+                        </NavLink>
 
-                        <NavLink style={linkStyle} to="/gallery" activeClassName="active-nav-class"><span className="dot"></span>Gallery</NavLink>
+                        <NavLink
+                            style={linkStyle}
+                            to="/gallery"
+                            activeClassName="active-nav-class">
+                            <span>
+                                <i className="far fa-image icon"></i>
+                            </span>
+                                Gallery
+                        </NavLink>
 
-                        <NavLink style={linkStyle} to="/statistics" activeClassName="active-nav-class"><span className="dot"></span>Statistics</NavLink>
+                        <NavLink
+                            style={linkStyle}
+                            to="/statistics"
+                            activeClassName="active-nav-class">
+                            <span>
+                                <i className="far fa-chart-bar icon"></i>
+                            </span>
+                            Statistics
+                        </NavLink>
 
-                        <NavLink style={linkStyle} to="/history" activeClassName="active-nav-class"><span className="dot"></span>History</NavLink>
+                        <NavLink
+                            style={linkStyle}
+                            to="/history"
+                            activeClassName="active-nav-class">
+                            <span>
+                                <i className="fas fa-history icon"></i>
+                            </span>
+                            History
+                        </NavLink>
 
                     </div>
 
@@ -43,11 +74,11 @@ const PageContainer = ({ hamsterList }) => {
                         <Route path="/gallery">
                             <Gallery hamsterList={hamsterList} />
                         </Route>
-                        
+
                         <Route path="/statistics">
                             <Statistics />
                         </Route>
-                        
+
                         <Route path="/history">
                             <History />
                         </Route>

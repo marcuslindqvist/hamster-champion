@@ -10,19 +10,23 @@ const MatchItem = ({ winnerId, loserId }) => {
 
             axios.get(`/hamsters/${winnerId}`)
                 .then(response => {
-                    console.log(response);
-                    // if (response.status !== 200) {
-                    //     setWinner({ name: "Död hamster X" })
-                    // } else setWinner(response.data)
+                    setWinner(response.data)
                 })
+                .catch(function (error) {
+                    if (error.response) {
+                        setWinner({name: "This hamster is dead"})
+                    }
+                });
 
             axios.get(`/hamsters/${loserId}`)
                 .then(response => {
-                    console.log(response);
-                    // if (response.status !== 200) {
-                    //     setLoser({ name: "Död hamster X" })
-                    // } else setLoser(response.data)
+                    setLoser(response.data)
                 })
+                .catch(function (error) {
+                    if (error.response) {
+                        setLoser({name: "This hamster is dead"})
+                    }
+                });
         }
         getHamsters();
     }, []);
