@@ -12,14 +12,21 @@
     grid-row: 2;
     grid-column: 2;
 }
-
+.game-notification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 /* Hamster Display Component */
 .hamster-display {
     border: 1px black solid;
     text-align: left;
-    background-image: linear-gradient(rgb(243, 217, 255), #ffdd79);
+    background-color: var(--color-card-background)
 }
-
+.hamster-display h4 {
+    padding-left: 1em;
+}
 .hamster-display li {
     list-style-type: none;
 }

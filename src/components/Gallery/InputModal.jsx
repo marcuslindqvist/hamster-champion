@@ -46,7 +46,9 @@ const InputModal = () => {
     }
     return (
         <div className="input-modal">
+            <img src={imgUrl} alt="hamster" />
             <div className="row">
+                
                 <div className="input-fields">
                     <label htmlFor="name">Namn:
                     <input
@@ -56,7 +58,8 @@ const InputModal = () => {
                             id="name"
                             onChange={handleChange}
                             onBlur={(evt) => showName(evt)}
-                        /></label>
+                        />
+                    </label>
                     <label htmlFor="age">Ålder:
                     <input
                             type="number"
@@ -74,6 +77,11 @@ const InputModal = () => {
                         />
                     </label>
 
+
+                </div>
+                
+                <div className="input-fields">
+                    
                     <label htmlFor="favFood">Favoritmat:
                     <input
                             type="text"
@@ -91,11 +99,8 @@ const InputModal = () => {
                             onChange={handleChange}
                             onBlur={(e) => handleImg(e)} />
                     </label>
-                </div>
-                <div className="input-fields">
 
-
-                    <img src={imgUrl} alt="hamster" />
+                    
 
 
                 </div>

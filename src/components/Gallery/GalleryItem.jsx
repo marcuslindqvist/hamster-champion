@@ -10,20 +10,28 @@ const GalleryItem = ({ hamster }) => {
     return (
         <div
             className="gallery-item">
-            <h3>{hamster.name}</h3>
+            <h5>{hamster.name}</h5>
             <img
                 src={`http://localhost:2010/img/${hamster.imgName}`}
                 alt="hamster"
+                onError={e => e.target.style.display = 'none'}
+            />
+            <img
+                src={hamster.imgName}
+                alt="hamster"
+                onError={e => e.target.style.display = 'none'}
             />
             <div className="extra-details">
-
-                <ul>
-                    <li>Ålder: {hamster.age}</li>
-                    <li>Älskar att: {hamster.loves}</li>
-                    <li>Favoritmat: {hamster.favFood}</li>
-                </ul>
+                <div id="text">
+                    <h5>{hamster.name}</h5>
+                    <ul>
+                        <li>Ålder: {hamster.age} år</li>
+                        <li>Älskar att: {hamster.loves}</li>
+                        <li>Favoritmat: {hamster.favFood}</li>
+                    </ul>
+                </div>
                 <div id="erase-btn" onClick={() => deleteHamster()}>
-                    <span>Radera {hamster.name}<i className="far fa-trash-alt"></i></span>
+                    <span>Radera {hamster.name}</span><i className="far fa-trash-alt"></i>
                 </div>
             </div>
         </div>

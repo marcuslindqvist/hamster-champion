@@ -17,7 +17,7 @@ const Gallery = ({ hamsterList }) => {
             </div>
 
             <div className="right-box">
-                <h1>GALLERI</h1>
+                <h3>GALLERI</h3>
                 <InputModal />
 
             </div>

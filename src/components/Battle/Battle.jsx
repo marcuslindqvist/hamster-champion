@@ -31,7 +31,10 @@ const Battle = ({ hamsterList }) => {
                 console.log(obj2);
                 console.log(obj3);
             }));
+     
+        setTimeout(() => { getRandomHamsters(); }, 600);
     }
+
     async function updateHamsters(e) {
 
         console.log(e)
@@ -49,6 +52,7 @@ const Battle = ({ hamsterList }) => {
                 games: warriorTwo.games + 1
             }
             sendUpdateRequests(winnerId, loserId, winnerPatch, loserPatch)
+
         } else if (e.target.parentElement.id === "warrior-two") {
 
             const loserId = warriorOne.id
@@ -76,10 +80,10 @@ const Battle = ({ hamsterList }) => {
 
         <div className="battle-component">
             <main>
+                
+                <HamsterDisplay compId="warrior-one" hamster={warriorOne} patch={updateHamsters} reBoot={getRandomHamsters}/>
 
-                <HamsterDisplay compId="warrior-one" hamster={warriorOne} patch={updateHamsters} />
-
-                <HamsterDisplay compId="warrior-two" hamster={warriorTwo} patch={updateHamsters} />
+                <HamsterDisplay compId="warrior-two" hamster={warriorTwo} patch={updateHamsters} reBoot={getRandomHamsters}/>
 
             </main>
         </div>
