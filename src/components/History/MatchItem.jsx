@@ -34,11 +34,11 @@ const MatchItem = ({ winnerId, loserId }) => {
 
     return (
         <div className="match-item">
-            <div className="vs"><i class="fa-2x far fa-smile"></i></div>
+            <div className="vs"><i className="fa-2x far fa-smile"></i></div>
             <StatListItem hamster={winner} showResult={false} />
             <div className="vs"><h5>VS</h5></div>
             <StatListItem hamster={loser} showResult={false} />
-            <div className="vs"><i class="fa-2x far fa-frown"></i></div>
+            <div className="vs"><i className="fa-2x far fa-frown"></i></div>
         </div>
     )
 }

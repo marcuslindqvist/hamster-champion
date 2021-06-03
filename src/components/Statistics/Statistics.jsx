@@ -3,7 +3,7 @@ import axios from 'axios'
 import "./Statistics.css"
 import StatsListItem from './StatListItem'
 
-const Statistics = () => {
+const Statistics = ({update}) => {
 
     const [winners, setWinners] = useState([])
     const [losers, setLosers] = useState([])
@@ -22,6 +22,7 @@ const Statistics = () => {
                     }
                 }));
         }
+        update(Date.now())
         getStats();
     }, []);
 

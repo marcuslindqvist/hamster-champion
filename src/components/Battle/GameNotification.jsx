@@ -23,7 +23,7 @@ const GameNotification = ({ name, setModal }) => {
             setStyle({
                 display: "none",
             })
-        }, 600);
+        }, 1000);
         return () => clearInterval(interval)
     }, [])
     const randomScream = Math.floor(Math.random() * hurra.length);

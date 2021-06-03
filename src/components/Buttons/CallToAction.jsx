@@ -1,7 +1,7 @@
 import "./Buttons.css"
 
-const CallToAction = ({ buttonText }) => (
-    <button className="call-to-action">
+const CallToAction = ({ buttonText, counter, setCounter }) => (
+    <button onClick={() => setCounter(counter + 1)} className="call-to-action">
         <strong>{buttonText}</strong>
     </button>
 )

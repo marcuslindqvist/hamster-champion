@@ -3,12 +3,13 @@ import HamsterDisplay from "./HamsterDisplay"
 import "./Battle.css"
 import axios from 'axios'
 
-const Battle = ({ hamsterList }) => {
+const Battle = ({ hamsterList, update }) => {
     const [warriorOne, setWarriorOne] = useState({})
     const [warriorTwo, setWarriorTwo] = useState({})
+    const [gameDetailsShow, setGameDetailsShow] = useState(false)
 
     function getRandomHamsters() {
-
+       
         const first = Math.floor(Math.random() * hamsterList.length);
 
         let second = Math.floor(Math.random() * hamsterList.length)
@@ -21,32 +22,33 @@ const Battle = ({ hamsterList }) => {
         setWarriorTwo(hamsterList[second])
     }
     async function sendUpdateRequests(winnerId, loserId, winnerPatch, loserPatch) {
+
         axios.all([
             axios.put(`/hamsters/${winnerId}`, winnerPatch),
             axios.put(`/hamsters/${loserId}`, loserPatch),
             axios.post("/matches", { winnerId: winnerId, loserId: loserId })
         ])
             .then(axios.spread((obj1, obj2, obj3) => {
-                console.log(obj1);
-                console.log(obj2);
-                console.log(obj3);
+                console.log(obj1, obj2, obj3);
             }));
-     
-        setTimeout(() => { getRandomHamsters(); }, 600);
+
+        setGameDetailsShow(true)
+
+        // setTimeout(() => { getRandomHamsters(); }, 600);
     }
 
     async function updateHamsters(e) {
 
-        console.log(e)
         if (e.target.parentElement.id === "warrior-one") {
 
             const winnerId = warriorOne.id
             const loserId = warriorTwo.id
-
+            console.log("1 before", warriorOne.wins);
             const winnerPatch = {
                 wins: warriorOne.wins + 1,
                 games: warriorOne.games + 1
             }
+            console.log("2 after", winnerPatch);
             const loserPatch = {
                 defeats: warriorTwo.defeats + 1,
                 games: warriorTwo.games + 1
@@ -73,6 +75,8 @@ const Battle = ({ hamsterList }) => {
 
 
     useEffect(() => {
+        setGameDetailsShow(false)
+        update(Date.now())
         getRandomHamsters()
     }, [])
 
@@ -80,12 +84,17 @@ const Battle = ({ hamsterList }) => {
 
         <div className="battle-component">
             <main>
-                
-                <HamsterDisplay compId="warrior-one" hamster={warriorOne} patch={updateHamsters} reBoot={getRandomHamsters}/>
 
-                <HamsterDisplay compId="warrior-two" hamster={warriorTwo} patch={updateHamsters} reBoot={getRandomHamsters}/>
+                <HamsterDisplay compId="warrior-one" hamster={warriorOne} patch={updateHamsters} reBoot={getRandomHamsters} showGame={gameDetailsShow} />
+
+                <HamsterDisplay compId="warrior-two" hamster={warriorTwo} patch={updateHamsters} reBoot={getRandomHamsters} showGame={gameDetailsShow} />
 
             </main>
+            <button
+                onClick={() => { setGameDetailsShow(false); getRandomHamsters() }} id="next-game"
+                disabled={!gameDetailsShow}>
+                Nästa match
+                </button>
         </div>
 
     )

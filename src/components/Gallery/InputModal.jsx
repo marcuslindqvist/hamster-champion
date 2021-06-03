@@ -27,13 +27,14 @@ const InputModal = ({ alert, alertMessage }) => {
 
         axios.post("/hamsters", newHamsterCopy)
             .then(response => {
-                { console.log(response.data); setAlert() };
+                console.log(response.data);
             })
             .catch(function (error) {
                 if (error.response) {
                     console.log(error.response);
                 }
             });
+        setAlert()
     }
     function setAlert() {
         alertMessage(`${newHamster.name} läggs nu till i databasen. Välkommen ${newHamster.name}`)
@@ -73,14 +74,15 @@ const InputModal = ({ alert, alertMessage }) => {
     const allowedAgeCharacters = "0123456789"
     let ageIsValid = true
     let ageErrorMessage = ''
-    
+
     if (newHamster.age == "") {
         ageIsValid = false
         ageErrorMessage = 'Vänligen skriv en ålder.'
-    } else if (!newHamster.age.split('').every(char => allowedAgeCharacters.includes(char)) ) {
-        ageIsValid = false
-        ageErrorMessage = 'Använd bara siffror'
-    }
+    } 
+    // else if (!newHamster.age.split('').every(char => allowedAgeCharacters.includes(char))) {
+    //     ageIsValid = false
+    //     ageErrorMessage = 'Använd bara siffror'
+    // }
     let ageClass = ''
     if (ageTouched) {
         ageClass = (ageIsValid ? 'valid' : 'error')

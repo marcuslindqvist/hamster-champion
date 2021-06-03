@@ -20,11 +20,6 @@ const GalleryItem = ({ hamster, alert, alertMessage }) => {
                 alt="hamster"
                 onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
             />
-            {/* <img
-                src={hamster.imgName}
-                alt="hamster"
-                onError={e => e.target.style.display = 'none'}
-            /> */}
             <div className="extra-details">
                 <div id="text">
                     <h5>{hamster.name}</h5>

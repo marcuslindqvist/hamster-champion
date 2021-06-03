@@ -85,7 +85,7 @@ const PageContainer = () => {
                 <div className="content-container">
                     <Switch>
                         <Route path="/battle">
-                            <Battle hamsterList={hamsters} />
+                            <Battle hamsterList={hamsters} update={setUpdate} />
                         </Route>
 
                         <Route path="/gallery">
@@ -93,7 +93,7 @@ const PageContainer = () => {
                         </Route>
 
                         <Route path="/statistics">
-                            <Statistics />
+                            <Statistics update={setUpdate} />
                         </Route>
 
                         <Route path="/history">

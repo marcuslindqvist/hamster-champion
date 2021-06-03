@@ -54,6 +54,8 @@
 		font-size: 1rem;
 	}
 
+
+
 	.page-container nav {
 		border-bottom: 2px solid var(--color-text);
 		display: flex;
@@ -65,6 +67,12 @@
 		width: 100%;
 		z-index: 5;
 		font-size: 1rem;
+	}
+
+	.landing-page {
+		display: flex;
+		flex-direction: column;
+
 	}
 
 	.landing-page .server-error {
@@ -96,45 +104,21 @@
 		padding-top: 5em;
 	}
 
-	.landing-page .main {
-		width: 100%;
-		display: flex;
-		justify-items: center;
-		align-items: center;
-		flex-wrap: wrap;
-		padding-left: 4em;
-		padding-right: 4em;
-	}
-
-	.battle-icon {
-		color: blueviolet;
-	}
-
-	.landing-page .left-box {
+	.landing-page .main-one {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: space-between;
+		background-image: url("http://localhost:2010/img/flagster.jpg");
+		background-repeat: no-repeat;
+		background-size: 400px;
+		background-position: bottom right;
 	}
 
-	.landing-page .left-box .text {
+	.landing-page .main-one .text {
 		text-align: left;
-	}
-
-	/*
-	.landing-page .right-box {
-		background-color: var(--color-background);
-		border-left: 2px solid var(--color-text);
-		height: 100%;
-		grid-column: 2;
-		grid-row: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 2em;
-	} */
-
-	.landing-page .right-box img {
-		width: 70%;
+		margin-bottom: 2em;
+		max-width: 60ch;
 	}
 
 	.gallery {
@@ -235,8 +219,6 @@
 	.gallery-grid li {
 		list-style-type: none;
 	}
-
-
 
 	.input-modal {
 		border: 2px solid var(--color-text);
