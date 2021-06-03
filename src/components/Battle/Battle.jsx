@@ -4,6 +4,7 @@ import "./Battle.css"
 import axios from 'axios'
 
 const Battle = ({ hamsterList, update }) => {
+    
     const [warriorOne, setWarriorOne] = useState({})
     const [warriorTwo, setWarriorTwo] = useState({})
     const [gameDetailsShow, setGameDetailsShow] = useState(false)
