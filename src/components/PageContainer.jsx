@@ -101,7 +101,7 @@ const PageContainer = () => {
                         </Route>
 
                         <Route path="/">
-                            <LandingPage server={serverStatus} />
+                            <LandingPage server={serverStatus} update={setUpdate} />
                         </Route>
 
                     </Switch>

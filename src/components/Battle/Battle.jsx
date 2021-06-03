@@ -9,7 +9,7 @@ const Battle = ({ hamsterList, update }) => {
     const [gameDetailsShow, setGameDetailsShow] = useState(false)
 
     function getRandomHamsters() {
-       
+
         const first = Math.floor(Math.random() * hamsterList.length);
 
         let second = Math.floor(Math.random() * hamsterList.length)
@@ -72,8 +72,6 @@ const Battle = ({ hamsterList, update }) => {
         }
     }
 
-
-
     useEffect(() => {
         setGameDetailsShow(false)
         update(Date.now())
@@ -90,8 +88,14 @@ const Battle = ({ hamsterList, update }) => {
                 <HamsterDisplay compId="warrior-two" hamster={warriorTwo} patch={updateHamsters} reBoot={getRandomHamsters} showGame={gameDetailsShow} />
 
             </main>
+
             <button
-                onClick={() => { setGameDetailsShow(false); getRandomHamsters() }} id="next-game"
+                onClick={() => {
+                    setGameDetailsShow(false);
+                    update(Date.now());
+                    getRandomHamsters()
+                }}
+                id="next-game"
                 disabled={!gameDetailsShow}>
                 Nästa match
                 </button>
