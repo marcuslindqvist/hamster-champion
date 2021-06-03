@@ -28,10 +28,10 @@ const GalleryItem = ({ hamster, alert, alertMessage }) => {
             <div className="extra-details">
                 <div id="text">
                     <h5>{hamster.name}</h5>
-                    <ul>
+                    <ul><strong>
                         <li>Ålder: {hamster.age} år</li>
                         <li>Älskar att: {hamster.loves}</li>
-                        <li>Favoritmat: {hamster.favFood}</li>
+                        <li>Favoritmat: {hamster.favFood}</li></strong>
                     </ul>
                 </div>
                 <div id="erase-btn" onClick={() => deleteHamster()}>

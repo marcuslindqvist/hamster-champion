@@ -31,9 +31,14 @@ const History = () => {
     next = (last === currentPage) ? currentPage : currentPage + 1;
 
     return (
-        <div>
-            {matches.map((match) => <MatchItem key={match.id} winnerId={match.winnerId} loserId={match.loserId} />)}
+        <div className="history">
+            {matches.map((match) =>
+                <MatchItem
+                    key={match.id}
+                    winnerId={match.winnerId}
+                    loserId={match.loserId} />)}
         </div>
     )
 }
+
 export default History

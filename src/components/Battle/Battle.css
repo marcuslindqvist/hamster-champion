@@ -20,7 +20,7 @@
 }
 /* Hamster Display Component */
 .hamster-display {
-    border: 1px black solid;
+    border: 2px var(--color-card-text) solid;
     text-align: left;
     background-color: var(--color-card-background)
 }

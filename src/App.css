@@ -305,7 +305,7 @@
 		height: 2em;
 		border-radius: 2em;
 		letter-spacing: 0.2em;
-		box-shadow: 5px 5px 0px 0px black;
+		box-shadow: 5px 5px 0px 0px var(--color-text);
 		background-color: var(--color-button);
 		transition: width 1.5s,
 			letter-spacing 1.5s;
@@ -315,4 +315,54 @@
 	.input-modal button:hover {
 		width: 260px;
 		letter-spacing: 0.4em;
+	}
+
+	.history {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.match-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+
+	/* .match-item:nth-child(odd) {
+		background-color: #fffffe;
+	}
+
+	.match-item:nth-child(even) {
+		background-color: v;
+	} */
+
+	.match-item div.vs {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: var(--color-card-background);
+		color: var(--color-card-text);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	.match-item .vs .fa-smile {
+		transition: color 300ms;
+	}
+
+	.match-item .vs .fa-smile:hover {
+		color: #c3f0ca;
+	}
+
+	.match-item .vs .fa-frown {
+		transition: color 300ms;
+	}
+
+	.match-item .vs .fa-frown:hover {
+		color: #ff8ba7;
 	}
