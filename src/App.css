@@ -96,13 +96,14 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		align-items: center; 
+		align-items: center;
 	}
 
 	.landing-page .left-box .text {
 		text-align: left;
 	}
-/*
+
+	/*
 	.landing-page .right-box {
 		background-color: var(--color-background);
 		border-left: 2px solid var(--color-text);
@@ -146,6 +147,7 @@
 		align-items: center;
 		justify-content: flex-start;
 		padding: 2em;
+		margin-top: -2em;
 	}
 
 	.gallery-item {
@@ -241,10 +243,16 @@
 	.input-modal .input-fields input {
 		background-color: var(--color-card-background);
 		outline: none;
-		border: 0;
 		height: 2em;
 		color: var(--color-card-text);
 		font-weight: 600;
+	}
+
+	input.valid {
+		border: #008013 2px solid;
+	}
+	input.error {
+		border: #ff8ba7 2px solid;
 	}
 
 	.input-fields label {
@@ -253,9 +261,24 @@
 		text-align: left;
 	}
 
-	.input-modal img {
+	.input-modal .img-holder {
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1em;
+		border: 1px solid var(--color-text);
+		height: 160px;
+		width: 160px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.input-modal .img-holder img {
+		height: 160px;
+		width: 160px;
 		object-fit: cover;
-		max-width: 160px;
+		border-radius: 50%;
 	}
 
 	.input-modal button {

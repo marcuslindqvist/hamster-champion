@@ -17,7 +17,7 @@ const Gallery = ({ hamsterList }) => {
             </div>
 
             <div className="right-box">
-                <h3>GALLERI</h3>
+                <h4>Lägg till en hamster</h4>
                 <InputModal />
 
             </div>
