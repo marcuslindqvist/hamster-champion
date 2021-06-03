@@ -8,7 +8,7 @@ const LandingPage = ({ server, update }) => {
 
     let content
 
-    if (counter == 0) {
+    if (counter === 0) {
         content =
             < section className="text" >
                 <h1>Hej<br />kompis!</h1>
@@ -16,14 +16,14 @@ const LandingPage = ({ server, update }) => {
                 <h5>Sätt stopp för fula och tråkiga hamstrar</h5>
 
             </section >
-    } else if (counter == 1) {
+    } else if (counter === 1) {
         content =
             <section className="text">
                 <h1>Börja<br />battla!</h1>
                 <h5>Under battle-fliken möts hamstrarna i duell.</h5>
                 <h5>Klicka på den du tycker är gulligast. Vinnarna klättrar i ranking och du kan följa din favorit!</h5>
             </section>
-    } else if (counter == 2) {
+    } else if (counter === 2) {
         content =
             <section className="text">
                 <h1>Se<br />och lär</h1>

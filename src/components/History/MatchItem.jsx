@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import StatListItem from "../Statistics/StatListItem"
 import axios from 'axios'
 
-const MatchItem = ({ winnerId, loserId }) => {
+const MatchItem = ({ winnerId, loserId, matchId, removeMatch }) => {
     const [winner, setWinner] = useState({})
     const [loser, setLoser] = useState({})
+    const [showX, setShowX] = useState(false)
 
     useEffect(() => {
         function getHamsters() {
@@ -15,7 +16,7 @@ const MatchItem = ({ winnerId, loserId }) => {
                 })
                 .catch(function (error) {
                     if (error.response) {
-                        setWinner({ name: "This hamster is dead" })
+                        setWinner({ name: "Dead hamster" })
                     }
                 });
 
@@ -25,7 +26,7 @@ const MatchItem = ({ winnerId, loserId }) => {
                 })
                 .catch(function (error) {
                     if (error.response) {
-                        setLoser({ name: "This hamster is dead" })
+                        setLoser({ name: "Dead hamster" })
                     }
                 });
         }
@@ -33,12 +34,26 @@ const MatchItem = ({ winnerId, loserId }) => {
     }, []);
 
     return (
-        <div className="match-item">
+        <div
+            className="match-item"
+            onMouseEnter={() => setShowX(true)}
+            onMouseLeave={() => setShowX(false)}>
+
             <div className="vs"><i className="fa-2x far fa-smile"></i></div>
+
             <StatListItem hamster={winner} showResult={false} />
+
             <div className="vs"><h5>VS</h5></div>
+
             <StatListItem hamster={loser} showResult={false} />
-            <div className="vs"><i className="fa-2x far fa-frown"></i></div>
+
+            <div className="vs">
+                <i className="fa-2x far fa-frown"></i>
+            </div>
+
+            {showX ?
+                <i className="fa-2x fas fa-times"
+                    onClick={() => removeMatch(matchId)}></i> : null}
         </div>
     )
 }

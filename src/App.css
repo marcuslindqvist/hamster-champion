@@ -367,3 +367,7 @@
 	.match-item .vs .fa-frown:hover {
 		color: #ff8ba7;
 	}
+	.match-item .fa-times {
+		margin-left: 1em;
+		cursor: pointer;
+	}

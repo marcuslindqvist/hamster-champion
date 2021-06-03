@@ -6,7 +6,7 @@ const StatsListItem = ({ hamster, text, showResult }) => {
         vinstFörlust = hamster.wins
     } else vinstFörlust = hamster.defeats
 
-    if (showResult == undefined) {
+    if (showResult === undefined) {
         showResult = true;
     }
     return (
@@ -23,7 +23,6 @@ const StatsListItem = ({ hamster, text, showResult }) => {
             <div className="info">
                 <h5>{hamster.name}</h5>
                 {showResult ? <span> <strong>{vinstFörlust}</strong> {text}</span> : null}
-
             </div>
         </div>
     )
