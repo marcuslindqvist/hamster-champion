@@ -1,17 +1,35 @@
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { useEffect, useState } from 'react'
 import LandingPage from "./LandingPage"
 import Battle from "./Battle/Battle"
 import Gallery from "./Gallery/Gallery"
 import Statistics from "./Statistics/Statistics"
 import History from "./History/History"
 
-const PageContainer = ({ hamsterList }) => {
-
+const PageContainer = () => {
+    const [hamsters, setHamsters] = useState([]);
+    const [update, setUpdate] = useState("")
+    const [serverStatus, setServerStatus] = useState(true)
     const linkStyle = {
         marginRight: "3rem",
         textDecoration: "none",
         color: 'black'
     };
+
+    useEffect(() => {
+        async function getHamsters() {
+            try {
+                const response = await fetch("/hamsters", { method: "GET" });
+                const data = await response.json();
+                setHamsters(data);
+            } catch (error) {
+                setServerStatus(false)
+                console.log(error.message);
+            }
+        }
+        getHamsters();
+    }, [update]);
+
 
     return (
         <div className="page-container">
@@ -66,13 +84,12 @@ const PageContainer = ({ hamsterList }) => {
                 </nav>
                 <div className="content-container">
                     <Switch>
-
                         <Route path="/battle">
-                            <Battle hamsterList={hamsterList} />
+                            <Battle hamsterList={hamsters} />
                         </Route>
 
                         <Route path="/gallery">
-                            <Gallery hamsterList={hamsterList} />
+                            <Gallery hamsterList={hamsters} update={setUpdate} />
                         </Route>
 
                         <Route path="/statistics">
@@ -84,7 +101,7 @@ const PageContainer = ({ hamsterList }) => {
                         </Route>
 
                         <Route path="/">
-                            <LandingPage />
+                            <LandingPage server={serverStatus} />
                         </Route>
 
                     </Switch>

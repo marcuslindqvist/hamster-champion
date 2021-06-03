@@ -15,7 +15,7 @@ const GameNotification = ({ name, setModal }) => {
         alignItems: "center",
         transition: "opacity 500ms"
         })
-        const [hurra, setHurra] = useState(["Hurra!", "Jippie!", "Slay!", "Wihoo!", "Yaas!", "OMG!", "WIN!", "YES!", "Jaaa!", "BOOM!", "Ka-ching!", "O la la"])
+        const [hurra] = useState(["Hurra!", "Jippie!", "Slay!", "Wihoo!", "Yaas!", "OMG!", "WIN!", "YES!", "Jaaa!", "BOOM!", "Ka-ching!", "O la la"])
 
     useEffect(() => {
         const interval = setTimeout(() => {

@@ -1,8 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
-import GalleryItem from "./GalleryItem"
 
-const InputModal = () => {
+const InputModal = ({ alert, alertMessage }) => {
     const [hamsterName, setHamstername] = useState("hamster")
     const [newHamster, setNewHamster] = useState({
         name: "",
@@ -28,7 +27,7 @@ const InputModal = () => {
 
         axios.post("/hamsters", newHamsterCopy)
             .then(response => {
-                console.log(response.data);
+                { console.log(response.data); setAlert() };
             })
             .catch(function (error) {
                 if (error.response) {
@@ -36,7 +35,10 @@ const InputModal = () => {
                 }
             });
     }
-
+    function setAlert() {
+        alertMessage(`${newHamster.name} läggs nu till i databasen. Välkommen ${newHamster.name}`)
+        alert(true)
+    }
     function showName(evt) {
         if (evt.target.value) {
             setHamstername(evt.target.value)
@@ -71,10 +73,11 @@ const InputModal = () => {
     const allowedAgeCharacters = "0123456789"
     let ageIsValid = true
     let ageErrorMessage = ''
+    
     if (newHamster.age == "") {
         ageIsValid = false
         ageErrorMessage = 'Vänligen skriv en ålder.'
-    } else if (!newHamster.age.split('').every(char => allowedAgeCharacters.includes(char))) {
+    } else if (!newHamster.age.split('').every(char => allowedAgeCharacters.includes(char)) ) {
         ageIsValid = false
         ageErrorMessage = 'Använd bara siffror'
     }
@@ -120,19 +123,18 @@ const InputModal = () => {
         imgClass = (imgIsValid ? 'valid' : 'error')
     }
 
-    let formIsInvalid = !nameIsValid || !ageIsValid
+    let formIsInvalid = !nameIsValid || !ageIsValid || !foodIsValid || !loveIsValid || !imgIsValid
 
     return (
         <div className="input-modal">
             {newHamster.imgName
                 ? <div className="img-holder">
                     <img
-                        src={newHamster.imgName} />
+                        src={newHamster.imgName} alt="hamster" />
                 </div> : <div className="img-holder"><img
-                    src="http://localhost:2010/img/flagster.png" /></div>}
+                    src="http://localhost:2010/img/flagster.png" alt="hamster" /></div>}
 
             <div className="row">
-
                 <div className="input-fields">
                     <label htmlFor="name">Namn:
                     <input

@@ -17,13 +17,9 @@ const HamsterDisplay = ({ hamster, patch, compId, reBoot }) => {
             <img
                 src={`http://localhost:2010/img/${hamster.imgName}`}
                 alt="hamster"
-                onError={e => e.target.style.display = 'none'}
+                onError={(e) => { e.target.onerror = null; e.target.src =`${hamster.imgName}` }}
             />
-            <img
-                src={hamster.imgName}
-                alt="hamster"
-                onError={e => e.target.style.display = 'none'}
-            />
+            
             <ul>
                 <li>Ålder: {hamster.age} år</li>
                 <li>Favoritmat: {hamster.favFood}</li>

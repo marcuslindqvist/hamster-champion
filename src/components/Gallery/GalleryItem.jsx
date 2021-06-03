@@ -1,12 +1,16 @@
 import axios from 'axios'
 
-const GalleryItem = ({ hamster }) => {
+const GalleryItem = ({ hamster, alert, alertMessage }) => {
 
     function deleteHamster() {
         axios.delete(`/hamsters/${hamster.id}`)
-            .then(response => console.log(response));
+            .then(response => { setAlert(); console.log(response) });
     }
 
+    function setAlert() {
+        alertMessage(`${hamster.name} kommer nu att raderas från databasen. Hejdå ${hamster.name}`)
+        alert(true)
+    }
     return (
         <div
             className="gallery-item">
@@ -14,13 +18,13 @@ const GalleryItem = ({ hamster }) => {
             <img
                 src={`http://localhost:2010/img/${hamster.imgName}`}
                 alt="hamster"
-                onError={e => e.target.style.display = 'none'}
+                onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
             />
-            <img
+            {/* <img
                 src={hamster.imgName}
                 alt="hamster"
                 onError={e => e.target.style.display = 'none'}
-            />
+            /> */}
             <div className="extra-details">
                 <div id="text">
                     <h5>{hamster.name}</h5>

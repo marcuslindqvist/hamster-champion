@@ -11,8 +11,10 @@ const StatsListItem = ({ hamster, index, text }) => {
             <div className="img-holder">
                 <img
                     src={`http://localhost:2010/img/${hamster.imgName}`}
+                    onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
                     key={hamster.name}
-                    hamster={hamster} />
+                    hamster={hamster} 
+                    alt="hamster" />
 
             </div>
             <div className="info">
