@@ -46,7 +46,7 @@ const PageContainer = () => {
                             <span>
                                 <i className="fas fa-bahai icon"></i>
                             </span>
-                            Battle
+                            Kamp
                         </NavLink>
 
                         <NavLink
@@ -56,7 +56,7 @@ const PageContainer = () => {
                             <span>
                                 <i className="far fa-image icon"></i>
                             </span>
-                                Gallery
+                                Galleri
                         </NavLink>
 
                         <NavLink
@@ -66,7 +66,7 @@ const PageContainer = () => {
                             <span>
                                 <i className="far fa-chart-bar icon"></i>
                             </span>
-                            Statistics
+                            Statistik
                         </NavLink>
 
                         <NavLink
@@ -76,7 +76,7 @@ const PageContainer = () => {
                             <span>
                                 <i className="fas fa-history icon"></i>
                             </span>
-                            History
+                            Historik
                         </NavLink>
 
                     </div>
