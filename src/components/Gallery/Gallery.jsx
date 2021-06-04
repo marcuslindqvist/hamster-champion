@@ -1,7 +1,9 @@
 import GalleryItem from "./GalleryItem"
 import InputModal from "./InputModal"
 import ChangeNotification from "./ChangeNotification"
+import "./Gallery.css"
 import { useEffect, useState } from 'react'
+
 const Gallery = ({ hamsterList, update }) => {
     const [alertChange, setAlertChange] = useState(false)
     const [alertMessage, setAlertMessage] = useState("")

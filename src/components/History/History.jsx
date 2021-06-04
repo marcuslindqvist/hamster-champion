@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
 import MatchItem from "./MatchItem"
+import "./History.css"
 
 const History = () => {
     const [matches, setMatches] = useState([])

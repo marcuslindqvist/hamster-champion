@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import StatListItem from "../Statistics/StatListItem"
 import axios from 'axios'
+import "./History.css"
 
 const MatchItem = ({ winnerId, loserId, matchId, removeMatch }) => {
     const [winner, setWinner] = useState({})

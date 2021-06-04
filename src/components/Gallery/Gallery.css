@@ -1,0 +1,196 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+}
+
+.gallery-grid {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-rows: repeat(auto-fill, auto);
+    grid-row-gap: 24px;
+    grid-column-gap: 24px;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.gallery .right-box {
+    border-left: 2px solid var(--color-text);
+    background-color: var(--color-card-background);
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2em;
+    margin-top: -2em;
+}
+
+.gallery-item {
+    border: 2px solid var(--color-text);
+    background-color: var(--color-card-background);
+    color: var(--color-card-text);
+    text-align: left;
+    overflow: hidden;
+    transition: box-shadow 200ms, transform 200ms;
+}
+
+.gallery-item h5 {
+    padding-left: 1em;
+}
+
+.gallery-item:hover {
+    box-shadow: 5px 5px 5px rgb(228, 217, 228);
+    transform: skew(1deg);
+}
+
+.gallery-item .extra-details {
+    display: none;
+}
+
+.extra-details #erase-btn {
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    text-align: right;
+    padding-right: 1em;
+    color: rgb(197, 70, 70);
+}
+
+.gallery-item:hover .extra-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+    background-color: var(--color-card-background);
+    color: var(--color-card-text);
+    height: 100%;
+    padding-left: 1em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.gallery-item:hover .extra-details ul {
+    padding-top: 1em;
+}
+
+.extra-details span {
+    margin-right: 0.4em;
+}
+
+.gallery-item img {
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+}
+
+.gallery-item h3 {
+    margin-left: 24px;
+    position: sticky;
+    z-index: 1;
+}
+
+.gallery-grid li {
+    list-style-type: none;
+}
+
+.input-modal {
+    border: 2px solid var(--color-text);
+    padding: 2em;
+    background-color: #c3f0ca;
+}
+
+.input-modal .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-modal .input-fields {
+    width: 24ch;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.input-modal .input-fields input {
+    background-color: var(--color-card-background);
+    outline: none;
+    height: 2em;
+    color: var(--color-card-text);
+    font-weight: 600;
+}
+
+input.valid {
+    border: #008013 2px solid;
+}
+
+input.error {
+    border: #ff8ba7 2px solid;
+}
+
+.input-fields label {
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.input-modal .img-holder {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border: 1px solid var(--color-text);
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-modal .img-holder img {
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.input-modal button {
+    font-size: 1em;
+    width: 200px;
+    height: 2em;
+    border-radius: 2em;
+    letter-spacing: 0.2em;
+    box-shadow: 5px 5px 0px 0px var(--color-text);
+    background-color: var(--color-button);
+    transition: width 1.5s,
+        letter-spacing 1.5s;
+    margin-top: 2em;
+}
+
+.input-modal button:hover {
+    width: 260px;
+    letter-spacing: 0.4em;
+}
+
+.match-winners {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    row-gap: 0.4em;
+    cursor: pointer;
+}
+
+.won-over {
+    background-color: #ffc6c7;
+    border-radius: 1em;
+    margin-bottom: 0.4em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
