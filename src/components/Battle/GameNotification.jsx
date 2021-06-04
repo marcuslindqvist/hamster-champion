@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-const GameNotification = ({ name, setModal }) => {
+const GameNotification = ({ setModal }) => {
     const [style, setStyle] = useState({
         width: "5em",
         height: "5em",
@@ -14,8 +14,8 @@ const GameNotification = ({ name, setModal }) => {
         justifyContent: "center",
         alignItems: "center",
         transition: "opacity 500ms"
-        })
-        const [hurra] = useState(["Hurra!", "Jippie!", "Slay!", "Wihoo!", "Yaas!", "OMG!", "WIN!", "YES!", "Jaaa!", "BOOM!", "Ka-ching!", "O la la"])
+    })
+    const [hurra] = useState(["Hurra!", "Jippie!", "Slay!", "Wihoo!", "Yaas!", "OMG!", "WIN!", "YES!", "Jaaa!", "BOOM!", "Ka-ching!", "O la la"])
 
     useEffect(() => {
         const interval = setTimeout(() => {
@@ -25,7 +25,8 @@ const GameNotification = ({ name, setModal }) => {
             })
         }, 1000);
         return () => clearInterval(interval)
-    }, [])
+    }, [setModal])
+
     const randomScream = Math.floor(Math.random() * hurra.length);
 
     return (

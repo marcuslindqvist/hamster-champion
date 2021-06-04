@@ -8,7 +8,7 @@ const Gallery = ({ hamsterList, update }) => {
     useEffect(() => {
         const start = Date.now()
         update(start)
-    }, [alertMessage]);
+    }, [alertMessage, update]);
 
     return (
         <div className="gallery">

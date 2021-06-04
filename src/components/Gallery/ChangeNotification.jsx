@@ -27,7 +27,7 @@ const ChangeNotification = ({ alert, text }) => {
             })
         }, 2000);
         return () => clearInterval(interval)
-    }, [])
+    }, [alert])
     return (
         <div className="update-notification" style={style}>
             <span><strong>{text}</strong></span>

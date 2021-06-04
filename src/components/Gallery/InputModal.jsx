@@ -84,7 +84,7 @@ const InputModal = ({ alert, alertMessage }) => {
     let ageIsValid = true
     let ageErrorMessage = ''
 
-    if (newHamster.age == "") {
+    if (newHamster.age === "") {
         ageIsValid = false
         ageErrorMessage = 'Vänligen skriv en ålder.'
     }
@@ -121,7 +121,7 @@ const InputModal = ({ alert, alertMessage }) => {
     if (newHamster.imgName === '') {
         imgIsValid = false
         imgErrorMessage = 'Fyll i en bild-url'
-    } else if (checkURL(newHamster.imgName) == false) {
+    } else if (checkURL(newHamster.imgName) === false) {
         imgIsValid = false;
         imgErrorMessage = "Länken måste sluta på .jpeg / .jpg / .png eller .gif"
     }

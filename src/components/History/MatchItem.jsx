@@ -31,7 +31,7 @@ const MatchItem = ({ winnerId, loserId, matchId, removeMatch }) => {
                 });
         }
         getHamsters();
-    }, []);
+    }, [loserId, winnerId]);
 
     return (
         <div

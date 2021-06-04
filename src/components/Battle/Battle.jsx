@@ -11,21 +11,18 @@ const Battle = ({ hamsterList, update }) => {
 
     function getRandomHamsters() {
 
-        const first = Math.floor(Math.random() * hamsterList.length);
+        const first = Math.floor(Math.random() * hamsterList.length + 1);
 
-        let second = Math.floor(Math.random() * hamsterList.length)
+        let second = -1;
+        debugger;
+        do { second = Math.floor(Math.random() * hamsterList.length + 1) }
+        while (first === second)
 
-        if (first === second) {
-            if (first == hamsterList.length) {
-                second -= 1;
-            } else if (first == 0) {
-                second += 1;
-            }
-        }
 
         setWarriorOne(hamsterList[first])
         setWarriorTwo(hamsterList[second])
     }
+
     async function sendUpdateRequests(winnerId, loserId, winnerPatch, loserPatch) {
 
         axios.all([
@@ -38,7 +35,6 @@ const Battle = ({ hamsterList, update }) => {
             }));
 
         setGameDetailsShow(true)
-
     }
 
     async function updateHamsters(e) {
@@ -47,16 +43,17 @@ const Battle = ({ hamsterList, update }) => {
 
             const winnerId = warriorOne.id
             const loserId = warriorTwo.id
-            console.log("1 before", warriorOne.wins);
+
             const winnerPatch = {
                 wins: warriorOne.wins + 1,
                 games: warriorOne.games + 1
             }
-            console.log("2 after", winnerPatch);
+
             const loserPatch = {
                 defeats: warriorTwo.defeats + 1,
                 games: warriorTwo.games + 1
             }
+
             sendUpdateRequests(winnerId, loserId, winnerPatch, loserPatch)
 
         } else if (e.target.parentElement.id === "warrior-two") {
@@ -77,10 +74,27 @@ const Battle = ({ hamsterList, update }) => {
     }
 
     useEffect(() => {
+
+        function getRandomHamsters() {
+
+            const first = Math.floor(Math.random() * hamsterList.length);
+
+            let second = Math.floor(Math.random() * hamsterList.length)
+
+            if (first === second) {
+                if (first === hamsterList.length) {
+                    second -= 1;
+                } else if (first === 0) {
+                    second += 1;
+                }
+            }
+
+            setWarriorOne(hamsterList[first])
+            setWarriorTwo(hamsterList[second])
+        }
         setGameDetailsShow(false)
-        update(Date.now())
         getRandomHamsters()
-    }, [])
+    }, [hamsterList])
 
     return (
 
@@ -95,9 +109,7 @@ const Battle = ({ hamsterList, update }) => {
 
             <button
                 onClick={() => {
-                    setGameDetailsShow(false);
                     update(Date.now());
-                    getRandomHamsters()
                 }}
                 id="next-game"
                 disabled={!gameDetailsShow}>

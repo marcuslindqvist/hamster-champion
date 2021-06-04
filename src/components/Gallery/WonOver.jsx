@@ -6,12 +6,16 @@ const WonOver = ({ loser }) => {
     const [name, setName] = useState("")
 
     useEffect(() => {
-        axios.get(`hamsters/${loser}`)
+        function getLoser(){
+            axios.get(`hamsters/${loser}`)
             .then(response => setName(response.data.name))
             .catch(function (error) {
+                setName("");
                 console.log(error);
             })
-    }, [])
+        }
+        getLoser()
+    }, [loser])
 
     return (
         <span>

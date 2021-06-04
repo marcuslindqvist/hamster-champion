@@ -22,7 +22,6 @@ const Statistics = ({update}) => {
                     }
                 }));
         }
-        update(Date.now())
         getStats();
     }, []);
 

@@ -30,7 +30,7 @@ const GalleryItem = ({ hamster, alert, alertMessage }) => {
             className="gallery-item">
             <h5>{hamster.name}</h5>
             <img
-                src={`http://localhost:2010/img/${hamster.imgName}`}
+                src={`img/${hamster.imgName}`}
                 alt="hamster"
                 onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
             />

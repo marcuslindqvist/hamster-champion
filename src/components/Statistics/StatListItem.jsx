@@ -9,14 +9,13 @@ const StatsListItem = ({ hamster, text, showResult }) => {
     if (showResult === undefined) {
         showResult = true;
     }
+
+
     return (
         <div className="stats-list-item">
             <div className="img-holder">
                 <img
-                    src={`http://localhost:2010/img/${hamster.imgName}`}
-                    onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
-                    key={hamster.name}
-                    hamster={hamster}
+                    src={hamster.imgName}
                     alt="hamster" />
 
             </div>
