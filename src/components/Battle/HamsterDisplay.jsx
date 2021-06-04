@@ -17,9 +17,9 @@ const HamsterDisplay = ({ hamster, patch, compId, reBoot, showGame }) => {
             {modalStatus ? <GameNotification name={hamster.name} setModal={setModalStatus} /> : (null)}
             <h4>{hamster.name}</h4>
             <img
-                src={`http://localhost:2010/img/${hamster.imgName}`}
+                src={`${hamster.imgName}`}
                 alt="hamster"
-                onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
+                // onError={(e) => { e.target.onerror = null; e.target.src = `${hamster.imgName}` }}
             />
             {showGame ? <strong>
                 <ul className="game-details">

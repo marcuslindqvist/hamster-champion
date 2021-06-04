@@ -39,7 +39,6 @@ const Battle = ({ hamsterList, update }) => {
 
         setGameDetailsShow(true)
 
-        // setTimeout(() => { getRandomHamsters(); }, 600);
     }
 
     async function updateHamsters(e) {
