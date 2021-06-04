@@ -24,7 +24,6 @@ const GalleryItem = ({ hamster, alert, alertMessage }) => {
 
     let uniqueLoserIdList = [...new Set(loserIdList)];
 
-
     return (
 
         <div

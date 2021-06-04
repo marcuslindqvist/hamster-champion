@@ -109,10 +109,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		background-image: url("http://localhost:2010/img/flagster.jpg");
+		background-image: url("https://dl.dropboxusercontent.com/s/4he4m9fnfl2gix8/hamsterFig.png?dl=0");
 		background-repeat: no-repeat;
-		background-size: 400px;
-		background-position: bottom right;
+		background-size: 100px;
+		background-position: center bottom;
 	}
 
 	.landing-page .main-one .text {

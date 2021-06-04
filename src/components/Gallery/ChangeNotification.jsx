@@ -11,10 +11,13 @@ const ChangeNotification = ({ alert, text }) => {
         height: "60px",
         gridRow: "2",
         gridColumn: "2",
-        backgroundColor: "#ff8ba7",
+        backgroundColor: "#ffc6c7",
         zIndex: "20",
         border: "2px solid #33272a",
-        marginTop: "3em"
+        marginTop: "3em",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
     })
     useEffect(() => {
         const interval = setTimeout(() => {

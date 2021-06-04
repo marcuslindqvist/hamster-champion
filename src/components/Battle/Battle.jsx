@@ -4,7 +4,7 @@ import "./Battle.css"
 import axios from 'axios'
 
 const Battle = ({ hamsterList, update }) => {
-    
+
     const [warriorOne, setWarriorOne] = useState({})
     const [warriorTwo, setWarriorTwo] = useState({})
     const [gameDetailsShow, setGameDetailsShow] = useState(false)
@@ -16,7 +16,11 @@ const Battle = ({ hamsterList, update }) => {
         let second = Math.floor(Math.random() * hamsterList.length)
 
         if (first === second) {
-            second = Math.floor(Math.random() * hamsterList.length);
+            if (first == hamsterList.length) {
+                second -= 1;
+            } else if (first == 0) {
+                second += 1;
+            }
         }
 
         setWarriorOne(hamsterList[first])

@@ -35,6 +35,7 @@ const InputModal = ({ alert, alertMessage }) => {
                 }
             });
         setAlert()
+        clearInput()
     }
     function setAlert() {
         alertMessage(`${newHamster.name} läggs nu till i databasen. Välkommen ${newHamster.name}`)
@@ -45,7 +46,15 @@ const InputModal = ({ alert, alertMessage }) => {
             setHamstername(evt.target.value)
         } else (setHamstername("hamster"))
     }
-
+    function clearInput() {
+        setNewHamster({
+            name: "",
+            age: "",
+            favFood: "",
+            loves: "",
+            imgName: ""
+        })
+    }
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -71,18 +80,15 @@ const InputModal = ({ alert, alertMessage }) => {
         nameClass = (nameIsValid ? 'valid' : 'error')
     }
 
-    const allowedAgeCharacters = "0123456789"
+
     let ageIsValid = true
     let ageErrorMessage = ''
 
     if (newHamster.age == "") {
         ageIsValid = false
         ageErrorMessage = 'Vänligen skriv en ålder.'
-    } 
-    // else if (!newHamster.age.split('').every(char => allowedAgeCharacters.includes(char))) {
-    //     ageIsValid = false
-    //     ageErrorMessage = 'Använd bara siffror'
-    // }
+    }
+
     let ageClass = ''
     if (ageTouched) {
         ageClass = (ageIsValid ? 'valid' : 'error')
@@ -134,7 +140,7 @@ const InputModal = ({ alert, alertMessage }) => {
                     <img
                         src={newHamster.imgName} alt="hamster" />
                 </div> : <div className="img-holder"><img
-                    src="http://localhost:2010/img/flagster.png" alt="hamster" /></div>}
+                    src="https://dl.dropboxusercontent.com/s/q82ax5l1ucgpqbw/hamsterFighead.png?dl=0" alt="hamster" /></div>}
 
             <div className="row">
                 <div className="input-fields">
@@ -155,6 +161,7 @@ const InputModal = ({ alert, alertMessage }) => {
                             type="number"
                             name="age"
                             id="age"
+                            value={newHamster.age}
                             onBlur={() => setAgeTouched(true)}
                             onChange={handleChange}
                         />
@@ -165,6 +172,7 @@ const InputModal = ({ alert, alertMessage }) => {
                             type="text"
                             name="loves"
                             id="loves"
+                            value={newHamster.loves}
                             onChange={handleChange}
                             onBlur={() => setLoveTouched(true)}
                         />
@@ -181,6 +189,7 @@ const InputModal = ({ alert, alertMessage }) => {
                             type="text"
                             name="favFood"
                             id="favFood"
+                            value={newHamster.favFood}
                             onChange={handleChange}
                             onBlur={() => setFoodTouched(true)}
                         />
@@ -192,6 +201,7 @@ const InputModal = ({ alert, alertMessage }) => {
                             type="url"
                             name="imgName"
                             id="imgName"
+                            value={newHamster.imgName}
                             onChange={handleChange}
                             onBlur={() => setImgTouched(true)} />
                     </label>
